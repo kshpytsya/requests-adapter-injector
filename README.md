@@ -23,8 +23,8 @@ $ venv/bin/python -c "import requests; r = requests.get('injector-test://some/ur
 Adapter packages have to declare one or more `requests_adapter_injector.adaptor` entry_points, and are expected
 to require this package, to have it installed automatically.
 
-Note: `setup.py` is deliberately missing as editable install would not work
-for this package, as `src/requests_adapter_injector.pth` would no be installed.
+Note: this package will not work when installed as editable install because
+`src/requests_adapter_injector.pth` is not installed then.
 
 ## Existing transport adapter packages
 
