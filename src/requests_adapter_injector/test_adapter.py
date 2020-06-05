@@ -5,7 +5,7 @@ import requests
 from .logger import logger
 
 
-class TestAdaptor(requests.adapters.BaseAdapter):
+class TestAdapter(requests.adapters.BaseAdapter):
     def __init__(self):
         super().__init__()
 
@@ -19,7 +19,7 @@ class TestAdaptor(requests.adapters.BaseAdapter):
         proxies=None
     ):
         logger.debug(
-            "TestAdaptor.send %s %s %s %s",
+            "TestAdapter.send %s %s %s %s",
             request.method,
             request.url,
             request.headers,

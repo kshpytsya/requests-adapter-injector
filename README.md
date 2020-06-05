@@ -20,7 +20,7 @@ $ venv/bin/python -c "import requests; r = requests.get('injector-test://some/ur
 {'method': 'GET', 'url': 'injector-test://some/url', 'headers': {'User-Agent': 'python-requests/2.23.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'}, 'body': None}
 ```
 
-Adapter packages have to declare one or more `requests_adapter_injector.adaptor` entry_points, and are expected
+Adapter packages have to declare one or more `requests_adapter_injector.adapter` entry_points, and are expected
 to require this package, to have it installed automatically.
 
 Note: this package will not work when installed as editable install because

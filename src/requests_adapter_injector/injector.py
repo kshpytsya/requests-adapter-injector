@@ -11,17 +11,17 @@ def inject(requests_sessions):
 
     entry_points = ilmd.entry_points()
 
-    adaptor_factories = {}
-    for ep in entry_points["requests_adapter_injector.adaptor"]:
+    adapter_factories = {}
+    for ep in entry_points["requests_adapter_injector.adapter"]:
         logger.debug("requests_adapter_injector::inject loading %s = %s", ep.name, ep.value)
-        adaptor_factories[ep.name] = ep.load()
+        adapter_factories[ep.name] = ep.load()
 
     orig_session_init = requests_sessions.Session.__init__
 
     def session_init(self):
         orig_session_init(self)
 
-        for prefix, factory in adaptor_factories.items():
+        for prefix, factory in adapter_factories.items():
             logger.debug("requests_adapter_injector::inject mounting %s = %s", prefix, factory)
             self.mount(prefix, factory())
 
