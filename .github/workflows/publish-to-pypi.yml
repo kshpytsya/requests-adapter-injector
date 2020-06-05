@@ -8,8 +8,7 @@ jobs:
 
     - uses: actions/checkout@master
       with:
-        all_commits: true
-        all_tags: true
+        fetch-depth: 0
 
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
